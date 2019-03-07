@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task List App</title>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="checking.css">
+</head>
+<body>
+	<div id='container'>
+		<header>
+			<section id='top'>
+			<div>
+				<img src='C:\Users\ANUSHA\Downloads\icons8-signal-filled-50.png'>
+				
+			</div>
+
+			<p>
+				12:45
+			</p>
+			<div>
+				<img src='C:\Users\ANUSHA\Downloads\icons8-charging-battery-filled-50.png'>
+			</div>
+		</section>
+
+		<section id='options'>
+
+			<button>
+				<img src='C:\Users\ANUSHA\Downloads\icons8-back-arrow-50.png'>
+			</button>
+			<button>
+				<img src='C:\Users\ANUSHA\Downloads\icons8-ellipsis-50.png'>
+			</button>
+		</section>
+
+			<p>Remote Working</p>
+
+			<button id='plus'>
+				<img src='C:\Users\ANUSHA\Downloads\icons8-add-48.png'>
+			</button>
+		</header>
+
+		<aside>
+			<input type="text" name="" placeholder="Enter new item">
+		</aside>
+
+		<main>
+
+			<section class='today'>
+				<p>Today</p>
+				<div class='each-entries'>
+
+					<div class='input'>
+						<!-- <input type="checkbox" name=""> -->
+						<img src='icons8-waste-50.png'>
+					</div>
+
+					<div class='icons'>
+						<img src='C:\Users\ANUSHA\Downloads\icons8-android-phone-48.png'>
+					</div>
+
+					<div class='content'>
+						<p class='description'>Design onboarding screen</p>
+						<p class='caption'>Discuss with team </p>
+					</div>
+
+					<div class='star'>
+						<img src='icons8-star-50.png' >
+					</div>
+
+			</div>
+
+		</section>
+
+		<section class='today last' >
+			<p></p>
+				<div class='each-entries'>
+
+					<div class='input'>
+						<!-- <input type="checkbox" name=""> -->
+						<img src='icons8-waste-50.png'>
+					</div>
+
+					<div class='icons'>
+						<img src='C:\Users\ANUSHA\Downloads\icons8-shpatel-48.png'>
+					</div>
+
+					<div class='content'>
+						<p class='description'>Create new icon set</p>
+						<p class='caption'></p>
+					</div>
+
+					<div class='star'>
+						<img src='icons8-star-50.png'>
+					</div>
+			</div>
+		</section>
+
+		<section class='tom'>
+				<p>Tomorrow</p>
+				<div class='each-entries'>
+					<div class='input'>
+						<!-- <input type="checkbox" name=""> -->
+						<img src='icons8-waste-50.png'>
+					</div>
+
+					<div class='icons'>
+						<img src='C:\Users\ANUSHA\Downloads\icons8-web-48.png'>
+					</div>
+
+					<div class='content'>
+						<p class='description'>Code a new website</p>
+						<p class='caption'></p>
+					</div>
+
+					<div class='star'>
+						<img src='icons8-star-50.png' >
+					</div>
+			</div>
+		</section>
+
+		<section class='tom'>
+			<p></p>
+				<div class='each-entries'>
+
+					<div class='input'>
+						<img src='icons8-waste-50.png'>
+						<!-- <input type="checkbox" name=""> -->
+					</div>
+
+					<div class='icons'>
+						<img src='C:/Users/ANUSHA/Downloads/icons8-envelope-48.png'>
+					</div>
+
+					<div class='content'>
+						<p class='description'>Send proposal email</p>
+						<p class='caption'></p>
+					</div>
+
+					<div class='star'>
+						<img src='icons8-star-50.png' >
+					</div>
+			</div>
+		</section>
+
+		<section class='tom last'>
+			<p></p>
+				<div class='each-entries'>
+					<div class='input'>
+						<img src='icons8-waste-50.png'>
+				</div>
+
+					<div class='icons'>
+						<img src='C:\Users\ANUSHA\Downloads\icons8-web-48.png'>
+					</div>
+
+					<div class='content deleted'>
+						<p class='description deleted'>Design new webpage</p>
+						<p class='caption deleted'></p>
+					</div>
+
+					<div class='star'>
+						<img src='icons8-star-50.png'>
+					</div>
+			</div>
+		</section>
+
+
+		</main>
+
+	</div>
+
+	<script type="text/javascript">
+
+		//on click: chnage text to grey and line trhough
+		$('main').on('click','.description',function(e){
+			$(this).toggleClass('deleted');
+
+			var img= $(this).parent().next().children();
+			var a=$(this).parent();
+
+						e.stopPropagation();
+
+
+		})
+				
+				//click on bin to delete
+				$('main').on('click','.input',function(){
+					$(this).parent().parent().fadeOut(500,function(){
+						$(this).remove();
+					})
+				});
+
+
+
+			
+		// 	if($( "input[type='checkbox']:checked" )){
+		// 		var imag=$(this).parent().siblings('.star');
+		// 		console.log(imag);
+		// 	var binImg=imag.children().attr('src','icons8-waste-50.png');
+		// 	console.log(binImg);
+		// 	binImg.on('click',function(){
+		// 	//delete todos on click of waste icon
+		// 		a.parent().parent().fadeOut(4000);
+		// 		 a.parent().parent().remove();
+		// 		})
+
+		// }
+
+
+			
+		//to bring back the star icon when it is not clicked
+		// $('.star img').attr('src','icons8-star-50.png');
+		
+
+		$('main').on('click','.caption',function(e){
+			$(this).toggleClass('deleted');
+			e.stopPropagation();
+
+		});
+
+		
+
+		//change star to filled image on click of it
+		$('main').on('click','.star img',function(e){
+			var i= $(this).attr('src');
+			if(i=='icons8-star-50.png')
+			{	
+				$(this).attr('src','icons8-star-filled-48.png');
+			}
+			else{
+				$(this).attr('src','icons8-star-50.png');
+			}
+			e.stopPropagation();
+		})
+
+		//on click of add iconinput fiekd visible and 
+// 		$('#plus').click(function(ee){
+// 			ee.stopPropagation();
+// 			$('aside').css('display','block');
+// 			$('input').keypress(function(e){
+// 				e.stopPropagation();
+// 				if(e.which ===13){
+// 					//the inout field is gone
+					
+// 					$('aside').hide();
+// 					//on enter new item is added and 
+					
+	
+// // <section class='tom'>
+// // </section>
+// 	  // if($(this).val() !=""){
+//     	var content="<section class='tom'><p></p><div class='each-entries'><div class='input'><input type='checkbox'></div><div class='icons'><img src='C:/Users/ANUSHA/Downloads/icons8-envelope-48.png'></div><div class='content'><p class='description'>"+$(this).val();+"</p><p class='caption'></p></div><div class='star'><img src='icons8-star-50.png'></div></div></section>";
+//     	$('main>section').first().prepend(content);
+//     // thisList.append(listItem);
+//     $(this).val('');
+//   // }
+
+// // Clone the last list to create a new one.
+// $(".addNewList").on("click",function(){
+//   var lastList = $(".listParent").last();
+//   lastList.clone().insertAfter(lastList);
+// });
+
+				
+
+// 					var newHtml=document.createElement('section').innerHTML=content;
+// 					// $('main').prepend(newHtml);
+					
+// 					$(this).val('');
+					
+					
+
+
+// 				}
+
+
+// 			})
+			
+			
+// 		});
+
+		//htmlStr = "";
+					// htmlStr+=$('<seasgaction></section>').attr('class','tom');
+					// htmlStr+=$('<p></p>').text('');
+					// htmlStr+=$('<div></div>').attr('class','each-entries');
+					// htmlStr+=$('<div></sgaagsagdiv>').attr('class','input');
+
+
+
+					// htmlStr+="<section clasggggsaass='tom'><p></p><div class='each-entries'><div class='input'><input type='checkbox'></div><div clasgagss='icons'><img src='C:/Users/ANUSHA/Downloads/icons8-envelope-48.png'></div><div class='content'><p class='description'>";
+					// htmlStr+=$('input').val();
+					// htmlStr+="</p><p class='caption'></p></div><div class='star'><img src='icons8-star-50.png'></div></div></section>";
+
+		
+
+		
+
+
+		  
+		
+
+
+
+
+
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<div class='star'>
+		<img src='icons8-star-50.png' >
+	</div>
+
+	<div class='star'>
+		<img src='icons8-star-50.png' >
+	</div>
+
+	<div class='star'>
+		<img src='icons8-star-50.png' >
+	</div>
+
+	<div class='star'>
+		<img src='icons8-star-50.png' >
+	</div>
+
+	<script type="text/javascript">
+		
+		var images=document.querySelectorAll('img');
+		// var images=document.querySelectorAll('.star img');
+
+		for(var i=0;i<images.length;i++){
+			images[i].onclick=function(){
+
+				if(this.getAttribute('src')=='icons8-star-50.png'){
+				this.src='icons8-star-filled-48.png';
+			}
+			else{
+				this.src='icons8-star-50.png';
+			}
+
+			}
+		}
+
+
+
+	</script>
+
+</body>
+</html> -->

@@ -1,0 +1,285 @@
+body{
+	margin:0;
+font-family: 'Montserrat', sans-serif;
+}
+
+#container{
+	width:45%;
+	/*border:1px solid black;*/
+	margin:3rem auto;
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.3),
+				-5px -5px 15px rgba(0,0,0,0.4),
+				5px 5px 15px rgba(0,0,0,0.3);
+
+	padding-bottom:15px;
+
+
+}
+
+#top img{
+	width:2rem;
+	height:2rem;
+}
+
+
+#top{
+	display: flex;
+	/*border:1px solid black;*/
+
+}
+
+#top>div:nth-of-type(1){
+flex: 1;
+/*border:1px solid black;*/
+align-self: center;
+}
+
+#top p{
+flex: 1;
+text-align: center;
+font-size: 1rem;
+
+/*border:1px solid black;*/
+}
+
+#top>div:nth-of-type(2){
+flex: 1;
+text-align: right;
+/*border:1px solid black;*/
+align-self: center;
+}
+
+#options{
+	display: flex;
+	margin:1.5rem ;
+}
+#options button{
+	flex: 1;
+	background: none;
+	border:none;
+
+}
+button{
+	background: none;
+	border:none;
+	outline: none;
+	cursor: pointer;
+}
+button:active{
+filter: drop-shadow(0 0 0.4rem rgb(52,0,74));
+}
+
+#options>button:nth-of-type(1){
+text-align: left;
+outline: 0;
+}
+
+#options>button:nth-of-type(2){
+text-align: right;
+outline: 0;
+}
+
+#options img{
+	width:2.25rem;
+	height:2.25rem;
+}
+
+header{
+	box-shadow: inset 0 0 0 1000px rgba(72,61,139,0.5);
+	/*background-color: ;*/
+background:url('mac3.jpg') no-repeat;
+background-size:100% 100%;
+background-position: top;
+
+position: relative;
+
+padding:5px;
+
+/*border:1px solid black;*/
+
+}
+
+#options+p{
+	color: white;
+	font-size: 2rem;
+	font-weight: bold;
+	
+/*	text-shadow: 2px 2px 2px rgb(65,0,93);*/
+
+}
+
+main{
+	/*border:1px solid black;*/
+	margin:10px;
+	display: flex;
+	flex-direction: column;
+}
+
+#plus{
+	position: absolute;
+
+	right:10px;
+	top:185px;
+}
+
+#plus img{
+	width: 4.5rem;
+	height:4.5rem;
+}
+
+
+.each-entries{
+	display: flex;
+	flex-wrap: nowrap;
+	margin-bottom: 1rem;
+	margin-top: 1.5rem;
+}
+
+.icons{
+	
+	width:2.5rem;
+	height: 2.5rem;
+}
+.description{
+	font-weight: bold;
+	font-size: 1.35rem;
+	color:rgb(81,81,81);
+	
+	line-height: 1.2;
+
+
+}
+.star {
+	width:1.75rem;
+	height:1.75rem;
+
+}
+.caption{
+	/*background: red;*/
+	line-height: 0.75;
+	/*border:1px solid black;*/
+	font-size: 1.15rem;
+	color: #999;
+	font-weight: bold;
+	/*text-shadow: 0 0 0.25px;*/
+}
+
+.today:not(.last), .tom:not(.last){
+	
+	border-bottom: 1px solid #d3d3d3;
+
+	
+}
+
+.today>p, .tom>p{
+	color: #999;
+	font-weight: bold;
+	text-transform: uppercase;
+	
+}
+.today,.tom{
+	margin-top:10px;
+}
+
+/*.tom .each-entries .input input[type='checkbox']{
+	border-bottom: 0; 
+}*/
+.icons img, .star img{
+	
+	width: 100%;
+	height:100%;
+
+
+}
+
+.tom,.today,.each-entries, .input, .icons, .description, .star,.icons~div{
+/*	border:1px solid black;*/
+	
+} 
+
+
+.input,.icons,.star{
+	/*text-align: center;*/
+
+	justify-content: center;
+	align-self: center;
+	/*border:1px solid black;*/
+}
+
+
+
+/*img[src='icons8-waste-50.png']{
+
+
+}*/
+
+aside{
+	width: 100%;
+	display: none;
+	
+/*	border:1px solid black;
+*/}
+input{
+	width: 98%;
+	line-height: 2;
+	font-size: 1.2rem;
+	/*display: none;*/
+}
+
+.caption{
+	/*text-align: left;*/
+}
+
+.input{
+	width:1.5rem;
+	height:1.5rem;
+}
+.icons{
+	margin-left:20px;
+	/*visibility: hidden;*/
+/*color: red;*/
+	/*flex:1;*/
+}
+.content{
+	/*background-color: red;*/
+	flex:2;
+	margin-left: 15px;
+	line-height:0.35rem;
+}
+
+.content+div{
+	/*color: red;*/
+	/*flex:1;*/
+}
+.deleted{
+	text-decoration: line-through;
+	color: #d3d3d3;
+}
+
+img[src="icons8-waste-50.png"]
+{
+	width:100%;
+	height:100%; 
+}
+
+
+/*.each-entries:hover > .icons{
+
+}*/
+
+@media screen and (max-width: 950px){
+	#container{
+		width:70%;
+	}
+
+
+}
+
+@media screen and (max-width: 550px){
+	#container{
+		width:85%;
+	}
+
+
+}
+
